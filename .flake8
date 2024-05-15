@@ -1,0 +1,4 @@
+[flake8]
+per-file-ignores =
+    # imported but unused is okay in __init__.py
+    __init__.py: F401

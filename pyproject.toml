@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools >= 61.0", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "pycondest"
+authors = [
+  { name="Samuel Scherrer", email="samuel.scherrer@posteo.de" },
+]
+license = {file = "LICENSE"}
+description = "Estimates the order-1 condition number of sparse matrices."
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+dynamic = ["version", "readme"]
+dependencies = [
+    "numpy",
+    "scipy",
+]
+
+[project.urls]
+Homepage = "https://github.com/s-scherrer/pycondest"
+Issues = "https://github.com/s-scherrer/pycondest/issues"
+
+[project.optional-dependencies]
+develop = ["pytest", "black", "flake8", "pre-commit", "oct2py"]
+
+
+[tool.setuptools.dynamic]
+readme = {file = "README.md"}
+
+[tool.setuptools_scm]
+version_file = "pycondest/_version.py"
+
+[tool.black]
+line-length = 79
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]
